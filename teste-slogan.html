@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste Slogan Mobile</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f0f0f0;
+        }
+
+        .test-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .slogan-img {
+            max-width: 80px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: block;
+            object-fit: contain;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .slogan-img {
+                max-width: 60px;
+                min-width: 40px;
+                width: 60px;
+                height: auto;
+                margin: 0 auto;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .slogan-img {
+                max-width: 50px;
+                min-width: 35px;
+                width: 50px;
+                height: auto;
+                margin: 0 auto;
+                display: block !important;
+                visibility: visible !important;
+                opacity: 1 !important;
+            }
+        }
+
+        .info {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test-container">
+        <h2>Teste do Slogan Mobile</h2>
+
+        <h3>Imagem com ./</h3>
+        <img src="./imagens/slogan.jpeg" alt="Slogan com ./" class="slogan-img">
+
+        <h3>Imagem sem ./</h3>
+        <img src="imagens/slogan.jpeg" alt="Slogan sem ./" class="slogan-img">
+
+        <h3>Informações do Dispositivo</h3>
+        <div class="info">
+            <p>Largura da tela: <span id="screenWidth"></span>px</p>
+            <p>User Agent: <span id="userAgent"></span></p>
+            <p>Teste realizado em: <span id="timestamp"></span></p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('screenWidth').textContent = window.innerWidth;
+        document.getElementById('userAgent').textContent = navigator.userAgent.substring(0, 100) + '...';
+        document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+        // Verificar carregamento das imagens
+        const images = document.querySelectorAll('.slogan-img');
+        images.forEach((img, index) => {
+            img.onload = function () {
+                console.log(`Imagem ${index + 1} carregou com sucesso`);
+                img.parentElement.style.background = '#e8f5e8';
+            };
+
+            img.onerror = function () {
+                console.log(`Erro ao carregar imagem ${index + 1}`);
+                img.parentElement.style.background = '#f5e8e8';
+                img.style.display = 'none';
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = 'Erro ao carregar imagem';
+                errorMsg.style.color = 'red';
+                img.parentElement.appendChild(errorMsg);
+            };
+        });
+    </script>
+</body>
+
+</html>

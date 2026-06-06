@@ -1,0 +1,1923 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leonardo Serviços Elétricos - Elétrica com Confiança</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description"
+    content="Leonardo Serviços Elétricos - Especialistas em instalações elétricas residenciais, manutenção, iluminação e quadros elétricos. Atendimento em toda região.">
+  <meta name="keywords"
+    content="eletricista, serviços elétricos, instalação elétrica, manutenção elétrica, iluminação, quadros elétricos">
+  <meta name="author" content="Leonardo Serviços Elétricos">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Leonardo Serviços Elétricos">
+  <meta property="og:description" content="Elétrica com confiança e responsabilidade!">
+
+  <!-- Fonts and Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <style>
+    :root {
+      --azul: #5A7EBD;
+      --azul-claro: #8CB9EA;
+      --amarelo: #ffc93c;
+      --cinza-bg: #f6f7fb;
+      --cinza-box: #f0f2f7;
+      --cinza-claro: #eee;
+      --escuro: #20232a;
+      --texto: #1a1a1a;
+      --branco: #fff;
+      --borda: #e4e8ee;
+      --verde-whatsapp: #25d366;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    body.dark-mode {
+      --azul: #7DA6DE;
+      --azul-claro: #A3CCE8;
+      --amarelo: #ffc93c;
+      --cinza-bg: #1a1a1a;
+      --cinza-box: #2a2a2a;
+      --cinza-claro: #444;
+      --escuro: #f0f0f0;
+      --texto: #e0e0e0;
+      --branco: #2a2a2a;
+      --borda: #444;
+      --verde-whatsapp: #25d366;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--cinza-bg);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--texto);
+      transition: all 0.3s ease;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+
+    /* Dark Mode Toggle */
+    #dark-mode-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+
+    #dark-mode-toggle:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .header-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .slogan-img {
+      max-width: 80px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: var(--branco);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin: 0;
+      letter-spacing: 1px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    header p {
+      color: var(--amarelo);
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      margin: 10px 0 20px 0;
+      font-weight: 600;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    nav a,
+    .dropdown .dropbtn {
+      text-decoration: none;
+      color: var(--branco);
+      font-weight: 600;
+      padding: 12px 20px;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      position: relative;
+      background: transparent;
+      cursor: pointer;
+      border: 2px solid transparent;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    nav a:hover,
+    .dropdown:hover .dropbtn {
+      background: var(--amarelo);
+      color: var(--azul);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(255, 201, 60, 0.4);
+      border-color: var(--amarelo);
+    }
+
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: var(--branco);
+      min-width: 220px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+      z-index: 1001;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 100%;
+      border-radius: 12px;
+      padding: 10px 0;
+      border: 1px solid var(--borda);
+      margin-top: 5px;
+    }
+
+    .dropdown-content a {
+      color: var(--azul) !important;
+      padding: 12px 20px;
+      text-decoration: none;
+      display: block;
+      text-align: left;
+      font-weight: 500;
+      background: transparent;
+      border-radius: 0;
+      transition: all 0.3s ease;
+      border: none;
+    }
+
+    .dropdown-content a:hover {
+      background: var(--azul-claro);
+      color: var(--branco) !important;
+      transform: none;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+    }
+
+    /* Main Content */
+    main {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    /* Hero Section */
+    .hero-section {
+      text-align: center;
+      padding: 80px 40px;
+      margin-bottom: 60px;
+      background: linear-gradient(135deg, var(--branco) 0%, var(--cinza-box) 100%);
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23ffc93c" opacity="0.1"/><circle cx="80" cy="40" r="3" fill="%235A7EBD" opacity="0.1"/><circle cx="40" cy="80" r="2" fill="%23ffc93c" opacity="0.1"/></svg>');
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-section h2 {
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--azul);
+      margin-bottom: 20px;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-section p {
+      font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+      color: var(--texto);
+      margin-bottom: 40px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.7;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+
+    .cta-btn {
+      padding: 15px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: var(--shadow);
+      border: 2px solid transparent;
+    }
+
+    .cta-btn.primary {
+      background: var(--amarelo);
+      color: var(--azul);
+    }
+
+    .cta-btn.secondary {
+      background: var(--azul);
+      color: var(--branco);
+    }
+
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.2rem);
+      color: var(--azul);
+      text-align: center;
+      margin: 60px 0 40px 0;
+      font-weight: 700;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--amarelo);
+      margin: 15px auto;
+      border-radius: 2px;
+    }
+
+    /* Services Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+
+    .service-card {
+      background: var(--branco);
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: 2px solid var(--borda);
+      box-shadow: var(--shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--azul), var(--amarelo));
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      border-color: var(--azul-claro);
+    }
+
+    .service-card i {
+      font-size: 3rem;
+      color: var(--azul);
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .service-card:hover i {
+      color: var(--amarelo);
+      transform: scale(1.1);
+    }
+
+    .service-card h3 {
+      font-size: 1.4rem;
+      color: var(--azul);
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    .service-card p {
+      color: var(--texto);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .btn-saiba-mais {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 10px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      display: inline-block;
+      border: 2px solid var(--azul);
+    }
+
+    .btn-saiba-mais:hover {
+      background: var(--amarelo);
+      color: var(--azul);
+      border-color: var(--amarelo);
+      transform: translateY(-2px);
+    }
+
+    /* Gallery */
+    .gallery-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin: 40px 0;
+      padding: 20px;
+    }
+
+    .gallery-item {
+      cursor: pointer;
+      border: none;
+      background: none;
+      padding: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 12px;
+      transition: all 0.3s ease;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Correção de orientação para imagens específicas */
+    .img-rotate-90 {
+      transform: rotate(90deg) !important;
+    }
+
+    .img-rotate-270 {
+      transform: rotate(270deg) !important;
+    }
+
+    .gallery-item:hover .img-rotate-90 {
+      transform: rotate(90deg) scale(1.05) !important;
+    }
+
+    .gallery-item:hover .img-rotate-270 {
+      transform: rotate(270deg) scale(1.05) !important;
+    }
+
+    /* Rotação no modal também */
+    .modal-content.img-rotate-90 {
+      transform: rotate(90deg) !important;
+    }
+
+    .modal-content.img-rotate-270 {
+      transform: rotate(270deg) !important;
+    }
+
+    /* Classe para diminuir tamanho específico das fotos depois2 e depois3 */
+    .img-small {
+      transform: scale(0.7) !important;
+    }
+
+    .img-rotate-270.img-small {
+      transform: rotate(270deg) scale(0.7) !important;
+    }
+
+    .gallery-item:hover .img-rotate-270.img-small {
+      transform: rotate(270deg) scale(0.75) !important;
+    }
+
+    .modal-content.img-rotate-270.img-small {
+      transform: rotate(270deg) scale(0.8) !important;
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      backdrop-filter: blur(5px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal.show {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 80%;
+      object-fit: contain;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      animation: zoomIn 0.3s ease;
+    }
+
+    .close-modal {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: var(--branco);
+      font-size: 40px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .close-modal:hover {
+      color: var(--amarelo);
+    }
+
+    /* Modal de Serviços */
+    .modal-content-service {
+      background-color: var(--branco);
+      margin: auto;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+      max-width: 600px;
+      width: 90%;
+      position: relative;
+      animation: zoomIn 0.3s ease;
+      color: var(--texto);
+    }
+
+    .close-button-service {
+      color: var(--azul);
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 35px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close-button-service:hover,
+    .close-button-service:focus {
+      color: var(--azul-claro);
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    /* Dark mode para modal de serviços */
+    body.dark-mode .modal-content-service {
+      background-color: var(--cinza-box);
+      color: var(--texto);
+    }
+
+    /* Modal de Confirmação WhatsApp */
+    .whatsapp-confirmation-modal {
+      display: none;
+      position: fixed;
+      z-index: 10001;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(3px);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .whatsapp-confirmation-modal.show {
+      display: flex;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .whatsapp-confirmation-content {
+      background: var(--branco);
+      margin: auto;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+      max-width: 500px;
+      width: 90%;
+      text-align: center;
+      position: relative;
+      animation: zoomIn 0.3s ease;
+      color: var(--texto);
+    }
+
+    .whatsapp-confirmation-content h3 {
+      color: var(--verde-whatsapp);
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    .whatsapp-confirmation-content p {
+      margin: 15px 0;
+      line-height: 1.6;
+      color: var(--texto);
+    }
+
+    .whatsapp-confirmation-buttons {
+      display: flex;
+      gap: 15px;
+      margin-top: 25px;
+      justify-content: center;
+    }
+
+    .btn-whatsapp-confirm {
+      background: var(--verde-whatsapp);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-whatsapp-confirm:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+
+    .btn-cancel-whatsapp {
+      background: var(--cinza-borda);
+      color: var(--texto);
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-cancel-whatsapp:hover {
+      background: var(--azul);
+      color: var(--branco);
+    }
+
+    body.dark-mode .whatsapp-confirmation-content {
+      background: var(--cinza-box);
+      color: var(--texto);
+    }
+
+    /* Estilo do conteúdo do modal de serviços */
+    #serviceModalContent h3 {
+      color: var(--azul);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+
+    #serviceModalContent p {
+      color: var(--texto);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    #serviceModalContent .btn-submit {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    #serviceModalContent .btn-submit:hover {
+      background: var(--azul-claro);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 50%;
+      width: auto;
+      padding: 16px;
+      margin-top: -22px;
+      color: white;
+      font-weight: bold;
+      font-size: 30px;
+      transition: 0.3s ease;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    .prev {
+      left: 0;
+      border-radius: 0 3px 3px 0;
+    }
+
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Form Section */
+    .form-section {
+      margin-top: 60px;
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
+      padding: 60px 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .form-section h2 {
+      color: var(--branco);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .form-subtitle {
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 1.1rem;
+      margin-bottom: 40px;
+    }
+
+    .contact-form {
+      max-width: 600px;
+      margin: 0 auto;
+      background: var(--branco);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--texto);
+      font-size: 0.95rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 15px;
+      border: 2px solid var(--borda);
+      border-radius: 8px;
+      font-size: 1rem;
+      background: var(--branco);
+      color: var(--texto);
+      transition: all 0.3s ease;
+      font-family: inherit;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--azul);
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(90, 126, 189, 0.1);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .btn-submit,
+    .btn-whatsapp {
+      background: var(--azul);
+      color: var(--branco);
+      padding: 15px 25px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      border: 2px solid var(--azul);
+    }
+
+    .btn-whatsapp {
+      background: var(--verde-whatsapp);
+      border-color: var(--verde-whatsapp);
+    }
+
+    .btn-submit:hover {
+      background: var(--amarelo);
+      color: var(--azul);
+      border-color: var(--amarelo);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
+    }
+
+    /* WhatsApp Float */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background: var(--verde-whatsapp);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      font-size: 1.8rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .whatsapp-float:hover {
+      background: #128C7E;
+      transform: scale(1.1);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+    }
+
+    /* Video Section */
+    .video-section {
+      background: var(--cinza-box);
+      padding: 40px;
+      border-radius: 15px;
+      margin: 40px 0;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    .video-responsive {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 100%;
+      margin: 20px 0;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--azul) 0%, var(--azul-claro) 100%);
+      color: var(--branco);
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-radius: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 1.1rem;
+    }
+
+    footer a {
+      color: var(--amarelo);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes zoomIn {
+      from {
+        opacity: 0;
+        transform: scale(0.3);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.6s ease-in;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        padding: 20px 15px;
+      }
+
+      .header-logo {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 10px;
+      }
+
+      nav a,
+      .dropdown .dropbtn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+      }
+
+      main {
+        padding: 0 15px;
+      }
+
+      .hero-section {
+        padding: 60px 20px;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        padding: 15px;
+      }
+
+      .contact-form {
+        margin: 0 10px;
+        padding: 30px 20px;
+      }
+
+      .form-buttons {
+        flex-direction: column;
+      }
+
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      #dark-mode-toggle {
+        width: 45px;
+        height: 45px;
+        top: 15px;
+        right: 15px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
+        bottom: 20px;
+        right: 20px;
+      }
+
+      .prev,
+      .next {
+        padding: 12px;
+        font-size: 24px;
+      }
+    }
+
+    /* Print Styles for PDF Export */
+    @media print {
+      body {
+        background: white !important;
+        color: black !important;
+      }
+
+      .whatsapp-float,
+      #dark-mode-toggle {
+        display: none !important;
+      }
+
+      .modal {
+        display: none !important;
+      }
+
+      header {
+        position: static !important;
+      }
+
+      main {
+        margin-top: 0 !important;
+        box-shadow: none !important;
+      }
+    }
+
+    /* Utility Classes */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-4 {
+      margin-top: 2rem;
+    }
+
+    .mb-4 {
+      margin-bottom: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Dark Mode Toggle -->
+  <button id="dark-mode-toggle" aria-label="Alternar modo escuro">
+    <i class="fas fa-moon"></i>
+  </button>
+
+  <!-- Header -->
+  <header>
+    <div class="header-logo">
+      <img src="imagens/slogan.jpeg" alt="Logo Leonardo Serviços Elétricos" class="slogan-img">
+      <div>
+        <h1>Leonardo Serviços Elétricos</h1>
+        <p>Elétrica com confiança e responsabilidade!</p>
+      </div>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#quem-somos">Quem Somos</a>
+      <div class="dropdown">
+        <button class="dropbtn">Serviços <i class="fas fa-chevron-down"></i></button>
+        <div class="dropdown-content">
+          <a href="#instalacoes-residenciais">Instalações Residenciais</a>
+          <a href="#manutencao">Manutenção</a>
+          <a href="#iluminacao">Iluminação</a>
+          <a href="#quadros-disjuntores">Quadros e Disjuntores</a>
+          <a href="#tomadas-interruptores">Tomadas e Interruptores</a>
+          <a href="#ventiladores-teto">Ventiladores de Teto</a>
+        </div>
+      </div>
+      <a href="#contato">Fale Conosco</a>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+      <div class="hero-content">
+        <h2>Seu Eletricista de Confiança</h2>
+        <p>Garantimos soluções elétricas eficientes e seguras para sua casa ou empresa. Conte com nossa expertise para
+          uma instalação perfeita e manutenções de qualidade.</p>
+        <div class="cta-buttons">
+          <a href="#contato" class="cta-btn primary">
+            <i class="fas fa-envelope"></i>
+            Solicitar Orçamento
+          </a>
+          <a href="https://wa.me/5524981715411" class="cta-btn secondary" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quem Somos -->
+    <section id="quem-somos">
+      <h2 class="section-title">⚡ Quem Somos</h2>
+      <p style="text-align: center; font-size: 1.1rem; line-height: 1.7; max-width: 800px; margin: 0 auto;">
+        Oferecemos serviços elétricos de alta qualidade, garantindo segurança e satisfação em cada projeto.
+        Transformamos ambientes através de soluções elétricas inovadoras, eficientes e sustentáveis.
+        Com anos de experiência no mercado, nossa equipe está preparada para atender suas necessidades
+        com profissionalismo e dedicação.
+      </p>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+      <h2 class="section-title">⚡ Nossos Serviços</h2>
+      <div class="services-grid">
+        <div class="service-card" id="instalacoes-residenciais">
+          <i class="fas fa-home"></i>
+          <h3>Instalações Residenciais</h3>
+          <p>Realizamos toda a instalação elétrica para sua nova casa ou reforma, garantindo segurança e funcionalidade
+            com materiais de primeira qualidade.</p>
+          <a href="#" class="btn-saiba-mais" data-service="instalacoes">Saiba Mais</a>
+        </div>
+        <div class="service-card" id="manutencao">
+          <i class="fas fa-wrench"></i>
+          <h3>Manutenção Elétrica</h3>
+          <p>Serviços de manutenção preventiva e corretiva para manter sua instalação sempre em perfeito estado e evitar
+            problemas futuros.</p>
+          <a href="#" class="btn-saiba-mais" data-service="manutencao">Saiba Mais</a>
+        </div>
+        <div class="service-card" id="iluminacao">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Iluminação</h3>
+          <p>Projetos e instalações de iluminação moderna, otimizando ambientes e reduzindo o consumo de energia com
+            tecnologia LED.</p>
+          <a href="#" class="btn-saiba-mais" data-service="iluminacao">Saiba Mais</a>
+        </div>
+        <div class="service-card" id="quadros-disjuntores">
+          <i class="fas fa-bolt"></i>
+          <h3>Quadros e Disjuntores</h3>
+          <p>Instalação e adequação de quadros de distribuição e disjuntores, com foco na segurança e conformidade com
+            normas técnicas.</p>
+          <a href="#" class="btn-saiba-mais" data-service="quadros">Saiba Mais</a>
+        </div>
+        <div class="service-card" id="tomadas-interruptores">
+          <i class="fas fa-plug"></i>
+          <h3>Tomadas e Interruptores</h3>
+          <p>Substituição e instalação de novas tomadas, interruptores e pontos elétricos com acabamento impecável.</p>
+          <a href="#" class="btn-saiba-mais" data-service="tomadas">Saiba Mais</a>
+        </div>
+        <div class="service-card" id="ventiladores-teto">
+          <i class="fas fa-fan"></i>
+          <h3>Ventiladores de Teto</h3>
+          <p>Instalação segura e eficiente de ventiladores de teto em diversos ambientes, com garantia de funcionamento
+            perfeito.</p>
+          <a href="#" class="btn-saiba-mais" data-service="ventiladores">Saiba Mais</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="galeria">
+      <h2 class="section-title">⚡ Nossos Trabalhos</h2>
+      <div class="gallery-container">
+        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+          <img src="imagens/antes.jpeg" alt="Trabalho antes da reforma" data-index="0">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+          <img src="imagens/antes1.jpeg" alt="Trabalho antes da reforma" data-index="1">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+          <img src="imagens/antes2.jpeg" alt="Trabalho antes da reforma" data-index="2">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+          <img src="imagens/depois.jpeg" alt="Trabalho depois da reforma" data-index="3">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+          <img src="imagens/depois1.jpeg" alt="Trabalho depois da reforma" data-index="4">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+          <img src="imagens/depois2.jpeg" alt="Trabalho depois da reforma" data-index="5"
+            class="img-rotate-270 img-small">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+          <img src="imagens/depois3.jpeg" alt="Trabalho depois da reforma" data-index="6"
+            class="img-rotate-270 img-small">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+          <img src="imagens/foto8-2.jpeg" alt="Trabalho antes da reforma" data-index="7">
+        </button>
+        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+          <img src="imagens/foto8-3.jpeg" alt="Trabalho depois da reforma" data-index="8">
+        </button>
+      </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section">
+      <h3>Veja Nosso Trabalho em Ação!</h3>
+      <div class="video-responsive">
+        <iframe src="https://www.youtube.com/embed/pC94Rhea4qQ?autoplay=0&loop=1&playlist=pC94Rhea4qQ"
+          title="Leonardo Serviços Elétricos - Trabalho em Ação"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+        </iframe>
+      </div>
+      <p>Este vídeo demonstra um pouco da qualidade e dedicação que aplicamos em nossos serviços elétricos residenciais.
+      </p>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contato" class="form-section">
+      <h2>Solicite Seu Orçamento</h2>
+      <p class="form-subtitle">Entre em contato conosco e receba um atendimento personalizado</p>
+
+      <form class="contact-form" id="contactForm">
+        <div class="form-group">
+          <label for="nome">Nome Completo:</label>
+          <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefone">Telefone/WhatsApp:</label>
+          <input type="tel" id="telefone" name="telefone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="servico">Tipo de Serviço:</label>
+          <select id="servico" name="servico" required>
+            <option value="">Selecione um serviço</option>
+            <option value="instalacao">Instalação Elétrica</option>
+            <option value="manutencao">Manutenção</option>
+            <option value="iluminacao">Iluminação</option>
+            <option value="quadros">Quadros e Disjuntores</option>
+            <option value="tomadas">Tomadas e Interruptores</option>
+            <option value="ventiladores">Ventiladores de Teto</option>
+            <option value="emergencia">Emergência</option>
+            <option value="outros">Outros</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensagem">Descrição do Serviço:</label>
+          <textarea id="mensagem" name="mensagem" placeholder="Descreva detalhadamente o serviço que precisa..."
+            required></textarea>
+        </div>
+
+        <div class="form-buttons">
+          <button type="submit" class="btn-submit">
+            <i class="fas fa-paper-plane"></i>
+            Enviar Solicitação
+          </button>
+          <a href="https://wa.me/5524981715411" class="btn-whatsapp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            WhatsApp Direto
+          </a>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- Modal for Images -->
+  <div id="imageModal" class="modal">
+    <span class="close-modal">&times;</span>
+    <img class="modal-content" id="modalImage" alt="Imagem ampliada">
+    <a class="prev" onclick="changeImage(-1)">&#10094;</a>
+    <a class="next" onclick="changeImage(1)">&#10095;</a>
+  </div>
+
+  <!-- Service Modal -->
+  <div id="serviceModal" class="modal">
+    <div class="modal-content-service">
+      <span class="close-button-service">&times;</span>
+      <div id="serviceModalContent">
+        <!-- Content will be dynamically inserted -->
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Confirmation Modal -->
+  <div id="whatsappConfirmationModal" class="whatsapp-confirmation-modal">
+    <div class="whatsapp-confirmation-content">
+      <h3><i class="fab fa-whatsapp"></i> Enviar via WhatsApp</h3>
+      <p><strong>✅ Seus dados foram coletados com sucesso!</strong></p>
+      <p>📱 Você será redirecionado para o WhatsApp onde:</p>
+      <ul style="text-align: left; margin: 15px 0; padding-left: 20px;">
+        <li>Sua mensagem já estará pronta para envio</li>
+        <li>Poderá revisar e editar os dados se necessário</li>
+        <li>Terá contato direto com nosso atendimento</li>
+      </ul>
+      <p><strong>🕒 Respondemos rapidamente durante horário comercial!</strong></p>
+      <div class="whatsapp-confirmation-buttons">
+        <button class="btn-whatsapp-confirm" id="confirmWhatsappBtn">
+          <i class="fab fa-whatsapp"></i> Prosseguir
+        </button>
+        <button class="btn-cancel-whatsapp" id="cancelWhatsappBtn">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Direct Contact Modal -->
+  <div id="whatsappDirectModal" class="whatsapp-confirmation-modal">
+    <div class="whatsapp-confirmation-content">
+      <h3><i class="fab fa-whatsapp"></i> Contato Direto via WhatsApp</h3>
+      <p><strong>🎯 Fale conosco agora mesmo!</strong></p>
+      <p>📱 Você será redirecionado para nossa conversa no WhatsApp onde poderá:</p>
+      <ul style="text-align: left; margin: 15px 0; padding-left: 20px;">
+        <li>🗨️ Conversar diretamente conosco</li>
+        <li>❓ Tirar dúvidas sobre nossos serviços</li>
+        <li>📋 Solicitar orçamentos personalizados</li>
+        <li>⚡ Relatar emergências elétricas</li>
+        <li>📸 Enviar fotos do problema</li>
+      </ul>
+      <div style="background: #f0f8ff; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 4px solid var(--verde-whatsapp);">
+        <p style="margin: 0; font-size: 0.9rem;"><strong>💡 Dica:</strong> Para um atendimento mais rápido, descreva brevemente o tipo de serviço que precisa!</p>
+      </div>
+      <p><strong>🕒 Horário de atendimento: Segunda a Sábado, 8h às 18h</strong></p>
+      <div class="whatsapp-confirmation-buttons">
+        <button class="btn-whatsapp-confirm" id="confirmDirectWhatsappBtn">
+          <i class="fab fa-whatsapp"></i> Iniciar Conversa
+        </button>
+        <button class="btn-cancel-whatsapp" id="cancelDirectWhatsappBtn">
+          Cancelar
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- WhatsApp Float Button -->
+  <button class="whatsapp-float" id="whatsappFloatBtn" aria-label="Contato via WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </button>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Desenvolvido por Paes Tech Sistemas. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    const body = document.body;
+    const toggleIcon = darkModeToggle.querySelector('i');
+
+    // Check for saved dark mode preference
+    if (localStorage.getItem('darkMode') === 'enabled') {
+      body.classList.add('dark-mode');
+      toggleIcon.classList.remove('fa-moon');
+      toggleIcon.classList.add('fa-sun');
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+
+      if (body.classList.contains('dark-mode')) {
+        toggleIcon.classList.remove('fa-moon');
+        toggleIcon.classList.add('fa-sun');
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        toggleIcon.classList.remove('fa-sun');
+        toggleIcon.classList.add('fa-moon');
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+
+    // Image Gallery Modal
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeModal = document.querySelector('.close-modal');
+    let currentImageIndex = 0;
+
+    const images = [
+      'imagens/antes.jpeg',
+      'imagens/antes1.jpeg',
+      'imagens/antes2.jpeg',
+      'imagens/depois.jpeg',
+      'imagens/depois1.jpeg',
+      'imagens/depois2.jpeg',
+      'imagens/depois3.jpeg',
+      'imagens/foto8-2.jpeg',
+      'imagens/foto8-3.jpeg'
+    ];
+
+    galleryItems.forEach((img, index) => {
+      img.parentElement.addEventListener('click', () => {
+        modal.classList.add('show');
+        modalImg.src = img.src;
+        modalImg.alt = img.alt;
+        currentImageIndex = index;
+
+        // Aplicar rotação no modal se a imagem original tem classe de rotação
+        modalImg.className = 'modal-content'; // Reset classes
+        if (img.classList.contains('img-rotate-90')) {
+          modalImg.classList.add('img-rotate-90');
+        } else if (img.classList.contains('img-rotate-270')) {
+          modalImg.classList.add('img-rotate-270');
+        }
+
+        // Aplicar tamanho pequeno se a imagem original tem classe img-small
+        if (img.classList.contains('img-small')) {
+          modalImg.classList.add('img-small');
+        }
+      });
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.remove('show');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('show');
+      }
+    });
+
+    // Navigation arrows for modal
+    function changeImage(direction) {
+      currentImageIndex += direction;
+
+      if (currentImageIndex >= images.length) {
+        currentImageIndex = 0;
+      } else if (currentImageIndex < 0) {
+        currentImageIndex = images.length - 1;
+      }
+
+      modalImg.src = images[currentImageIndex];
+
+      // Aplicar rotação baseada na imagem atual
+      const currentImg = galleryItems[currentImageIndex];
+      modalImg.className = 'modal-content'; // Reset classes
+      if (currentImg.classList.contains('img-rotate-90')) {
+        modalImg.classList.add('img-rotate-90');
+      } else if (currentImg.classList.contains('img-rotate-270')) {
+        modalImg.classList.add('img-rotate-270');
+      }
+
+      // Aplicar tamanho pequeno se a imagem atual tem classe img-small
+      if (currentImg.classList.contains('img-small')) {
+        modalImg.classList.add('img-small');
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (modal.classList.contains('show')) {
+        if (e.key === 'ArrowLeft') {
+          changeImage(-1);
+        } else if (e.key === 'ArrowRight') {
+          changeImage(1);
+        } else if (e.key === 'Escape') {
+          modal.classList.remove('show');
+        }
+      }
+    });
+
+    // Service Modal
+    const serviceButtons = document.querySelectorAll('.btn-saiba-mais');
+    const serviceModal = document.getElementById('serviceModal');
+    const serviceModalContent = document.getElementById('serviceModalContent');
+    const closeServiceModal = document.querySelector('.close-button-service');
+
+    const serviceDetails = {
+      'instalacoes': {
+        title: 'Instalações Residenciais',
+        content: `
+                    <h3>Instalações Elétricas Completas</h3>
+                    <ul>
+                        <li>Projetos elétricos residenciais</li>
+                        <li>Instalação de fiação completa</li>
+                        <li>Distribuição de circuitos</li>
+                        <li>Instalação de quadros de distribuição</li>
+                        <li>Aterramento e proteção</li>
+                        <li>Conformidade com normas ABNT</li>
+                    </ul>
+                    <p><strong>Garantia:</strong> em todos os serviços</p>
+                `
+      },
+      'manutencao': {
+        title: 'Manutenção Elétrica',
+        content: `
+                    <h3>Manutenção Preventiva e Corretiva</h3>
+                    <ul>
+                        <li>Inspeção de instalações elétricas</li>
+                        <li>Troca de componentes defeituosos</li>
+                        <li>Limpeza de quadros elétricos</li>
+                        <li>Verificação de aterramento</li>
+                        <li>Teste de disjuntores e DR</li>
+                        <li>Relatório técnico detalhado</li>
+                    </ul>
+                    <p><strong>Atendimento:</strong> 24h para emergências</p>
+                `
+      },
+      'iluminacao': {
+        title: 'Projetos de Iluminação',
+        content: `
+                    <h3>Iluminação Eficiente e Moderna</h3>
+                    <ul>
+                        <li>Projeto luminotécnico</li>
+                        <li>Instalação de LED</li>
+                        <li>Automação residencial</li>
+                        <li>Sensores de presença</li>
+                        <li>Dimers e controles</li>
+                        <li>Iluminação decorativa</li>
+                    </ul>
+                    <p><strong>Economia:</strong> Até 80% de redução no consumo</p>
+                `
+      },
+      'quadros': {
+        title: 'Quadros e Disjuntores',
+        content: `
+                    <h3>Quadros Elétricos e Proteção</h3>
+                    <ul>
+                        <li>Instalação de quadros de distribuição</li>
+                        <li>Disjuntores termomagnéticos</li>
+                        <li>Dispositivos DR</li>
+                        <li>DPS (proteção contra surtos)</li>
+                        <li>Organização e identificação</li>
+                        <li>Adequação às normas</li>
+                    </ul>
+                    <p><strong>Segurança:</strong> Proteção total da instalação</p>
+                `
+      },
+      'tomadas': {
+        title: 'Tomadas e Interruptores',
+        content: `
+                    <h3>Pontos Elétricos e Comando</h3>
+                    <ul>
+                        <li>Instalação de tomadas padrão NBR</li>
+                        <li>Interruptores simples e paralelos</li>
+                        <li>Tomadas USB integradas</li>
+                        <li>Dimers para iluminação</li>
+                        <li>Sensores de presença</li>
+                        <li>Acabamento em diversas cores</li>
+                    </ul>
+                    <p><strong>Qualidade:</strong> Materiais de primeira linha</p>
+                `
+      },
+      'ventiladores': {
+        title: 'Ventiladores de Teto',
+        content: `
+                    <h3>Instalação de Ventiladores</h3>
+                    <ul>
+                        <li>Instalação segura em lajes</li>
+                        <li>Reforço estrutural quando necessário</li>
+                        <li>Ventiladores com e sem luz</li>
+                        <li>Controle remoto</li>
+                        <li>Regulagem de velocidade</li>
+                        <li>Balanceamento perfeito</li>
+                    </ul>
+                    <p><strong>Conforto:</strong> Ventilação eficiente e silenciosa</p>
+                `
+      }
+    };
+
+    serviceButtons.forEach(button => {
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        const serviceType = button.getAttribute('data-service');
+        const service = serviceDetails[serviceType];
+
+        if (service) {
+          serviceModalContent.innerHTML = `
+                        <h2>${service.title}</h2>
+                        ${service.content}
+                        <div style="margin-top: 30px; text-align: center;">
+                            <a href="#contato" class="btn-submit" onclick="closeServiceModalHandler()">
+                                <i class="fas fa-envelope"></i>
+                                Solicitar Orçamento
+                            </a>
+                        </div>
+                    `;
+          serviceModal.classList.add('show');
+        }
+      });
+    });
+
+    closeServiceModal.addEventListener('click', () => {
+      serviceModal.classList.remove('show');
+    });
+
+    serviceModal.addEventListener('click', (e) => {
+      if (e.target === serviceModal) {
+        serviceModal.classList.remove('show');
+      }
+    });
+
+    function closeServiceModalHandler() {
+      serviceModal.classList.remove('show');
+    }
+
+    // Contact Form
+    const contactForm = document.getElementById('contactForm');
+    const whatsappConfirmationModal = document.getElementById('whatsappConfirmationModal');
+    const confirmWhatsappBtn = document.getElementById('confirmWhatsappBtn');
+    const cancelWhatsappBtn = document.getElementById('cancelWhatsappBtn');
+    let pendingWhatsappUrl = '';
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(contactForm);
+      const data = {
+        nome: formData.get('nome'),
+        email: formData.get('email'),
+        telefone: formData.get('telefone'),
+        servico: formData.get('servico'),
+        mensagem: formData.get('mensagem')
+      };
+
+      // Create WhatsApp message
+      const message = `*Solicitação de Orçamento*\n\n` +
+        `*Nome:* ${data.nome}\n` +
+        `*Email:* ${data.email}\n` +
+        `*Telefone:* ${data.telefone}\n` +
+        `*Serviço:* ${data.servico}\n` +
+        `*Descrição:* ${data.mensagem}`;
+
+      pendingWhatsappUrl = `https://wa.me/5524981715411?text=${encodeURIComponent(message)}`;
+
+      // Show WhatsApp confirmation modal
+      whatsappConfirmationModal.classList.add('show');
+    });
+
+    // WhatsApp confirmation modal handlers
+    confirmWhatsappBtn.addEventListener('click', () => {
+      // Open WhatsApp
+      window.open(pendingWhatsappUrl, '_blank');
+
+      // Close modal
+      whatsappConfirmationModal.classList.remove('show');
+
+      // Reset form
+      contactForm.reset();
+
+      // Show brief success message
+      setTimeout(() => {
+        const successToast = document.createElement('div');
+        successToast.innerHTML = `
+          <div style="
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--verde-whatsapp);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 10002;
+            animation: slideInRight 0.3s ease;
+          ">
+            <i class="fas fa-check-circle"></i> Redirecionado para WhatsApp com sucesso!
+          </div>
+        `;
+        document.body.appendChild(successToast);
+
+        setTimeout(() => {
+          successToast.remove();
+        }, 3000);
+      }, 500);
+    });
+
+    cancelWhatsappBtn.addEventListener('click', () => {
+      whatsappConfirmationModal.classList.remove('show');
+      pendingWhatsappUrl = '';
+    });
+
+    // Close modal when clicking outside
+    whatsappConfirmationModal.addEventListener('click', (e) => {
+      if (e.target === whatsappConfirmationModal) {
+        whatsappConfirmationModal.classList.remove('show');
+        pendingWhatsappUrl = '';
+      }
+    });
+
+    // WhatsApp Direct Contact (Float Button)
+    const whatsappFloatBtn = document.getElementById('whatsappFloatBtn');
+    const whatsappDirectModal = document.getElementById('whatsappDirectModal');
+    const confirmDirectWhatsappBtn = document.getElementById('confirmDirectWhatsappBtn');
+    const cancelDirectWhatsappBtn = document.getElementById('cancelDirectWhatsappBtn');
+
+    whatsappFloatBtn.addEventListener('click', () => {
+      whatsappDirectModal.classList.add('show');
+    });
+
+    confirmDirectWhatsappBtn.addEventListener('click', () => {
+      // Create direct contact message
+      const directMessage = `Olá! 👋\n\nVi o site da Leonardo Serviços Elétricos e gostaria de conversar sobre serviços elétricos.\n\nPodemos conversar?`;
+      const directWhatsappUrl = `https://wa.me/5524981715411?text=${encodeURIComponent(directMessage)}`;
+      
+      // Open WhatsApp
+      window.open(directWhatsappUrl, '_blank');
+      
+      // Close modal
+      whatsappDirectModal.classList.remove('show');
+      
+      // Show brief success message
+      setTimeout(() => {
+        const successToast = document.createElement('div');
+        successToast.innerHTML = `
+          <div style="
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--verde-whatsapp);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+            z-index: 10002;
+            animation: slideInRight 0.3s ease;
+          ">
+            <i class="fab fa-whatsapp"></i> Conversa iniciada no WhatsApp!
+          </div>
+        `;
+        document.body.appendChild(successToast);
+        
+        setTimeout(() => {
+          successToast.remove();
+        }, 3000);
+      }, 500);
+    });
+
+    cancelDirectWhatsappBtn.addEventListener('click', () => {
+      whatsappDirectModal.classList.remove('show');
+    });
+
+    // Close direct modal when clicking outside
+    whatsappDirectModal.addEventListener('click', (e) => {
+      if (e.target === whatsappDirectModal) {
+        whatsappDirectModal.classList.remove('show');
+      }
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+
+    // Intersection Observer for animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        }
+      });
+    }, observerOptions);
+
+    // Observe sections for animation
+    document.querySelectorAll('section, .service-card').forEach(el => {
+      observer.observe(el);
+    });
+
+    // Phone number formatting
+    document.getElementById('telefone').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      value = value.replace(/(\d{2})(\d)/, '($1) $2');
+      value = value.replace(/(\d{5})(\d)/, '$1-$2');
+      e.target.value = value;
+    });
+
+    // Scroll to top functionality
+    let scrollTopBtn = document.createElement('button');
+    scrollTopBtn.innerHTML = '<i class="fas fa-arrow-up"></i>';
+    scrollTopBtn.className = 'scroll-top-btn';
+    scrollTopBtn.style.cssText = `
+            position: fixed;
+            bottom: 100px;
+            right: 25px;
+            background: var(--azul);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: none;
+            z-index: 999;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        `;
+    document.body.appendChild(scrollTopBtn);
+
+    window.addEventListener('scroll', () => {
+      if (window.pageYOffset > 300) {
+        scrollTopBtn.style.display = 'flex';
+        scrollTopBtn.style.alignItems = 'center';
+        scrollTopBtn.style.justifyContent = 'center';
+      } else {
+        scrollTopBtn.style.display = 'none';
+      }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+
+    // Loading animation
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+
+    // Error handling for images
+    document.querySelectorAll('img').forEach(img => {
+      img.addEventListener('error', function () {
+        this.style.display = 'none';
+        console.warn('Imagem não encontrada:', this.src);
+      });
+    });
+  </script>
+</body>
+
+</html>
