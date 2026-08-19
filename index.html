@@ -65,7 +65,7 @@
     <!-- Hero Section -->
     <section id="home" class="hero-section">
       <div class="hero-content">
-        <h2>Seu Eletricista de Confiança</h2>
+        <h1>Seu Eletricista de Confiança</h1>
         <p>Garantimos soluções elétricas eficientes e seguras para sua casa ou empresa. Conte com nossa expertise para
           uma instalação perfeita e manutenções de qualidade.</p>
         <div class="cta-buttons">
@@ -143,37 +143,48 @@
     <!-- Galeria -->
     <section id="galeria">
       <h2 class="section-title">Nossos Trabalhos</h2>
-      <div class="gallery-container">
-        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
-          <img src="imagens/antes.jpeg" alt="Trabalho antes da reforma" data-index="0">
+      <div class="gallery-carousel" aria-label="Galeria de trabalhos" aria-roledescription="carousel">
+        <button class="gallery-nav gallery-nav-prev" id="galleryPrev" type="button" aria-label="Imagem anterior">
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
         </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
-          <img src="imagens/antes1.jpeg" alt="Trabalho antes da reforma" data-index="1">
-        </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
-          <img src="imagens/antes2.jpeg" alt="Trabalho antes da reforma" data-index="2">
-        </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
-          <img src="imagens/depois.jpeg" alt="Trabalho depois da reforma" data-index="3">
-        </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
-          <img src="imagens/depois1.jpeg" alt="Trabalho depois da reforma" data-index="4">
-        </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
-          <img src="imagens/depois2.jpeg" alt="Trabalho depois da reforma" data-index="5"
-            class="img-rotate-270 img-small">
-        </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
-          <img src="imagens/depois3.jpeg" alt="Trabalho depois da reforma" data-index="6"
-            class="img-rotate-270 img-small">
-        </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Antes">
-          <img src="imagens/foto8-2.jpeg" alt="Trabalho antes da reforma" data-index="7">
-        </button>
-        <button class="gallery-item" aria-label="Visualizar imagem - Depois">
-          <img src="imagens/foto8-3.jpeg" alt="Trabalho depois da reforma" data-index="8">
+        <div class="gallery-viewport">
+          <div class="gallery-container" id="galleryTrack">
+            <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+              <img src="imagens/antes.jpeg" alt="Trabalho antes da reforma" data-index="0">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+              <img src="imagens/antes1.jpeg" alt="Trabalho antes da reforma" data-index="1">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+              <img src="imagens/antes2.jpeg" alt="Trabalho antes da reforma" data-index="2">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+              <img src="imagens/depois.jpeg" alt="Trabalho depois da reforma" data-index="3">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+              <img src="imagens/depois1.jpeg" alt="Trabalho depois da reforma" data-index="4">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+              <img src="imagens/depois2.jpeg" alt="Trabalho depois da reforma" data-index="5"
+                class="img-rotate-270 img-small">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+              <img src="imagens/depois3.jpeg" alt="Trabalho depois da reforma" data-index="6"
+                class="img-rotate-270 img-small">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Antes">
+              <img src="imagens/foto8-2.jpeg" alt="Trabalho antes da reforma" data-index="7">
+            </button>
+            <button class="gallery-item" aria-label="Visualizar imagem - Depois">
+              <img src="imagens/foto8-3.jpeg" alt="Trabalho depois da reforma" data-index="8">
+            </button>
+          </div>
+        </div>
+        <button class="gallery-nav gallery-nav-next" id="galleryNext" type="button" aria-label="Próxima imagem">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
         </button>
       </div>
+      <div class="gallery-indicators" id="galleryIndicators" aria-label="Indicadores da galeria"></div>
     </section>
 
     <!-- Contact Form -->
@@ -306,24 +317,27 @@
     <i class="fab fa-whatsapp"></i>
   </button>
 
-  <div class="social-float-group" aria-label="Redes sociais">
-    <a class="social-float instagram js-social-link" data-social="instagram"
-      href="https://www.instagram.com/lpinstalacoeseletricas26?igsh=MTl4YTN1NXQxMnRqeA=="
-      target="_blank" rel="noopener noreferrer"
-      aria-label="Instagram da LP Instalações Elétricas">
-      <i class="fab fa-instagram" aria-hidden="true"></i>
-    </a>
-    <a class="social-float tiktok js-social-link" data-social="tiktok"
-      href="https://www.tiktok.com/@user771020362?_r=1&_t=ZS-9912tPTFswu"
-      target="_blank" rel="noopener noreferrer"
-      aria-label="TikTok da LP Instalações Elétricas">
-      <i class="fab fa-tiktok" aria-hidden="true"></i>
-    </a>
-  </div>
-
   <!-- Footer -->
   <footer>
-    <p>&copy; <span id="currentYear"></span> LP Servicos Elétricos. Todos os direitos reservados.</p>
+    <div class="footer-social-links" aria-label="Redes sociais da LP Instalações Elétricas">
+      <a class="footer-social-link js-social-link" data-social="instagram"
+        href="https://www.instagram.com/lpinstalacoeseletricas26?igsh=MTl4YTN1NXQxMnRqeA=="
+        target="_blank" rel="noopener noreferrer"
+        aria-label="Instagram da LP Instalações Elétricas">
+        <i class="fab fa-instagram" aria-hidden="true"></i>
+        <span>Instagram</span>
+      </a>
+      <a class="footer-social-link js-social-link" data-social="tiktok"
+        href="https://www.tiktok.com/@user771020362?_r=1&_t=ZS-9912tPTFswu"
+        target="_blank" rel="noopener noreferrer"
+        aria-label="TikTok da LP Instalações Elétricas">
+        <i class="fab fa-tiktok" aria-hidden="true"></i>
+        <span>TikTok</span>
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; <span id="currentYear"></span> LP Instalações Elétricas. Todos os direitos reservados.</p>
+    </div>
   </footer>
 
   <script src="js/script.js"></script>

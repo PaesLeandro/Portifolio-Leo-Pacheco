@@ -40,10 +40,21 @@
 
     // Image Gallery Modal
     const galleryItems = document.querySelectorAll('.gallery-item img');
+    const galleryTrack = document.getElementById('galleryTrack');
+    const galleryViewport = document.querySelector('.gallery-viewport');
+    const galleryPrev = document.getElementById('galleryPrev');
+    const galleryNext = document.getElementById('galleryNext');
+    const galleryIndicators = document.getElementById('galleryIndicators');
     const modal = document.getElementById('imageModal');
     const modalImg = document.getElementById('modalImage');
     const closeModal = document.querySelector('.close-modal');
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
     let currentImageIndex = 0;
+    let currentGalleryIndex = 0;
+    let galleryAutoplayInterval = null;
+    let galleryResumeTimeout = null;
+    let touchStartX = 0;
+    let touchEndX = 0;
 
     const images = [
       'imagens/antes.jpeg',
@@ -56,6 +67,180 @@
       'imagens/foto8-2.jpeg',
       'imagens/foto8-3.jpeg'
     ];
+
+    function getGalleryItemsPerView() {
+      if (window.innerWidth <= 480) {
+        return 1;
+      }
+      if (window.innerWidth <= 768) {
+        return 2;
+      }
+      return 3;
+    }
+
+    function getGalleryMaxIndex() {
+      return Math.max(0, galleryItems.length - getGalleryItemsPerView());
+    }
+
+    function updateGalleryPosition() {
+      if (!galleryTrack || !galleryItems.length) {
+        return;
+      }
+
+      const maxIndex = getGalleryMaxIndex();
+      if (currentGalleryIndex > maxIndex) {
+        currentGalleryIndex = maxIndex;
+      }
+
+      const firstItem = galleryItems[0].parentElement;
+      const itemWidth = firstItem.offsetWidth;
+      const gap = parseFloat(window.getComputedStyle(galleryTrack).gap) || 0;
+      const offset = currentGalleryIndex * (itemWidth + gap);
+
+      galleryTrack.style.transform = `translateX(-${offset}px)`;
+
+      if (galleryIndicators) {
+        galleryIndicators.querySelectorAll('.gallery-indicator').forEach((indicator, index) => {
+          const isActive = index === currentGalleryIndex;
+          indicator.classList.toggle('active', isActive);
+          indicator.setAttribute('aria-current', isActive ? 'true' : 'false');
+        });
+      }
+    }
+
+    function goToGalleryIndex(index) {
+      const maxIndex = getGalleryMaxIndex();
+
+      if (index < 0) {
+        currentGalleryIndex = maxIndex;
+      } else if (index > maxIndex) {
+        currentGalleryIndex = 0;
+      } else {
+        currentGalleryIndex = index;
+      }
+
+      updateGalleryPosition();
+    }
+
+    function stopGalleryAutoplay() {
+      if (galleryAutoplayInterval) {
+        clearInterval(galleryAutoplayInterval);
+        galleryAutoplayInterval = null;
+      }
+    }
+
+    function startGalleryAutoplay() {
+      stopGalleryAutoplay();
+
+      if (prefersReducedMotion.matches || galleryItems.length <= getGalleryItemsPerView()) {
+        return;
+      }
+
+      galleryAutoplayInterval = setInterval(() => {
+        goToGalleryIndex(currentGalleryIndex + 1);
+      }, 5000);
+    }
+
+    function pauseGalleryAutoplay(delay = 5000) {
+      stopGalleryAutoplay();
+      clearTimeout(galleryResumeTimeout);
+
+      if (prefersReducedMotion.matches) {
+        return;
+      }
+
+      galleryResumeTimeout = setTimeout(() => {
+        startGalleryAutoplay();
+      }, delay);
+    }
+
+    function buildGalleryIndicators() {
+      if (!galleryIndicators) {
+        return;
+      }
+
+      galleryIndicators.innerHTML = '';
+      const totalIndicators = getGalleryMaxIndex() + 1;
+
+      for (let index = 0; index < totalIndicators; index++) {
+        const indicator = document.createElement('button');
+        indicator.type = 'button';
+        indicator.className = 'gallery-indicator';
+        indicator.setAttribute('aria-label', `Ir para a posição ${index + 1} da galeria`);
+        indicator.setAttribute('aria-current', index === currentGalleryIndex ? 'true' : 'false');
+        indicator.addEventListener('click', () => {
+          goToGalleryIndex(index);
+          pauseGalleryAutoplay();
+        });
+        galleryIndicators.appendChild(indicator);
+      }
+    }
+
+    function handleGalleryManualNavigation(direction) {
+      goToGalleryIndex(currentGalleryIndex + direction);
+      pauseGalleryAutoplay();
+    }
+
+    if (galleryPrev && galleryNext) {
+      galleryPrev.addEventListener('click', () => {
+        handleGalleryManualNavigation(-1);
+      });
+
+      galleryNext.addEventListener('click', () => {
+        handleGalleryManualNavigation(1);
+      });
+    }
+
+    if (galleryViewport) {
+      galleryViewport.addEventListener('mouseenter', () => {
+        stopGalleryAutoplay();
+      });
+
+      galleryViewport.addEventListener('mouseleave', () => {
+        pauseGalleryAutoplay(2500);
+      });
+
+      galleryViewport.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].clientX;
+        stopGalleryAutoplay();
+      }, { passive: true });
+
+      galleryViewport.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].clientX;
+        const swipeDistance = touchEndX - touchStartX;
+
+        if (Math.abs(swipeDistance) > 40) {
+          handleGalleryManualNavigation(swipeDistance < 0 ? 1 : -1);
+        } else {
+          pauseGalleryAutoplay(2500);
+        }
+      }, { passive: true });
+    }
+
+    if (galleryTrack) {
+      galleryTrack.addEventListener('focusin', () => {
+        stopGalleryAutoplay();
+      });
+
+      galleryTrack.addEventListener('focusout', () => {
+        pauseGalleryAutoplay(2500);
+      });
+    }
+
+    window.addEventListener('resize', () => {
+      const previousIndicators = galleryIndicators ? galleryIndicators.childElementCount : 0;
+      const nextIndicators = getGalleryMaxIndex() + 1;
+
+      if (previousIndicators !== nextIndicators) {
+        buildGalleryIndicators();
+      }
+
+      updateGalleryPosition();
+    });
+
+    buildGalleryIndicators();
+    updateGalleryPosition();
+    startGalleryAutoplay();
 
     galleryItems.forEach((img, index) => {
       img.parentElement.addEventListener('click', () => {
@@ -126,6 +311,12 @@
         } else if (e.key === 'Escape') {
           modal.classList.remove('show');
         }
+      } else if (document.activeElement && document.activeElement.closest('#galeria')) {
+        if (e.key === 'ArrowLeft') {
+          handleGalleryManualNavigation(-1);
+        } else if (e.key === 'ArrowRight') {
+          handleGalleryManualNavigation(1);
+        }
       }
     });
 
@@ -163,7 +354,7 @@
                         <li>Teste de disjuntores e DR</li>
                         <li>Relatório técnico detalhado</li>
                     </ul>
-                    <p><strong>Atendimento:</strong> 24h para emergências</p>
+                    <p><strong>Segurança:</strong> Evite riscos de curto-circuito</p>
                 `
       },
       'iluminacao': {
@@ -454,14 +645,14 @@
     scrollTopBtn.className = 'scroll-top-btn';
     scrollTopBtn.style.cssText = `
             position: fixed;
-            bottom: 100px;
+            bottom: 95px;
             right: 25px;
-            background: var(--azul);
+            background: rgba(90, 126, 189, 0.92);
             color: white;
             border: none;
             border-radius: 50%;
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             cursor: pointer;
             display: none;
             z-index: 999;
