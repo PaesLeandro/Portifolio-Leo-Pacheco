@@ -1,5 +1,5 @@
     const socialLinks = {
-      instagram: 'https://www.instagram.com/lpinstalacoeseletricas26?igsh=MTl4YTN1NXQxMnRqeA==',
+      instagram: 'https://www.instagram.com/lpinstalacoeseletrica26?igsi=MTNuZzRrYXZyenpneA%3D%3D&utm_source=qr_code&utm_medium=qr_code&utm_campaign=qr_code',
       tiktok: 'https://www.tiktok.com/@user771020362?_r=1&_t=ZS-9912tPTFswu'
     };
 
